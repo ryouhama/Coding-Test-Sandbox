@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Create Template Directory",
+      "type": "shell",
+      "command": "rye",
+      "args": [
+        "run",
+        "python",
+        "task/create_directory.py",
+        "-p=${input:path}",
+        "-n=${input:name}"
+      ],
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "path",
+      "description": "Path:",
+      "default": "atcoder/999",
+      "type": "promptString"
+    },
+    {
+      "id": "name",
+      "description": "Name:",
+      "default": "A",
+      "type": "promptString"
+    }
+  ]
+}
