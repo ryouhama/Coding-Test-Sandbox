@@ -12,7 +12,8 @@
         "-p=${input:path}",
         "-n=${input:name}"
       ],
-      "problemMatcher": []
+      "problemMatcher": [],
+      "group": "build"
     }
   ],
   "inputs": [
