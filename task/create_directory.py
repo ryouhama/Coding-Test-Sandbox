@@ -9,9 +9,14 @@ import os
 import argparse
 
 TEMPLATE = '''"""
-Title: 
-URL: 
->>> rye run python %s < %s
+Title:
+
+URL:
+
+Memo:
+
+Run:
+    >>> rye run python %s < %s
 """
 '''
 
