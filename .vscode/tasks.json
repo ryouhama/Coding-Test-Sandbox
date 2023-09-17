@@ -20,13 +20,13 @@
     {
       "id": "path",
       "description": "Path:",
-      "default": "atcoder/999",
+      "default": "atcoder/XXX",
       "type": "promptString"
     },
     {
       "id": "name",
       "description": "Name:",
-      "default": "A",
+      "default": "X",
       "type": "promptString"
     }
   ]
