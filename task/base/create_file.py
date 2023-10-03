@@ -1,15 +1,10 @@
 import os
 import logging
-from dataclasses import dataclass
 
 logger = logging.getLogger()
 
 
-class CreateFileFactory:
-    SOURCE_FILE_NAME = "execute.py"
-    INPUT_FILE_NAME = "input.txt"
-
-    TEMPLATE = '''"""
+TEMPLATE = '''"""
 Title:
 
 URL:
@@ -20,6 +15,11 @@ Run:
 	>>> rye run python {source_file_path} < {input_file_path}
 """
 '''
+
+
+class CreateFileFactory:
+    SOURCE_FILE_NAME = "execute.py"
+    INPUT_FILE_NAME = "input.txt"
 
     def create_directory(self, path: str) -> None:
         try:
@@ -37,13 +37,13 @@ Run:
         input_file_path = f"{path}/{self.INPUT_FILE_NAME}"
         with open(source_file_path, mode="w") as file:
             file.write(
-                self.TEMPLATE.format(
+                TEMPLATE.format(
                     source_file_path=source_file_path, input_file_path=input_file_path
                 )
             )
         logger.info(f"ソースファイル作成成功 path={path}")
 
     def create_input(self, path: str) -> None:
-        with open(f"{path}/{self.SOURCE_FILE_NAME}", mode="w") as file:
+        with open(f"{path}/{self.INPUT_FILE_NAME}", mode="w") as file:
             file.write("")
         logger.info(f"インプット作成成功 path={path}")

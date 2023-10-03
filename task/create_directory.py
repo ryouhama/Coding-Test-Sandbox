@@ -8,18 +8,6 @@
 import argparse
 from base.create_file import CreateFileFactory
 
-TEMPLATE = '''"""
-Title:
-
-URL:
-
-Memo:
-
-Run:
-    >>> rye run python %s < %s
-"""
-'''
-
 parser = argparse.ArgumentParser(
     prog="Create Template Directory",
     usage="create_directory.py -p='atcoder/999' -n='A'",
