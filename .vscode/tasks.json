@@ -4,12 +4,27 @@
     {
       "label": "Create Template Directory",
       "type": "shell",
-      "command": "rye",
+      "command": "PYTHONDONTWRITEBYTECODE=1",
       "args": [
+        "rye",
         "run",
         "python",
         "task/create_directory.py",
         "-p=${input:path}",
+        "-n=${input:name}"
+      ],
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Create Template ABC Directory",
+      "type": "shell",
+      "command": "PYTHONDONTWRITEBYTECODE=1",
+      "args": [
+        "rye",
+        "run",
+        "python",
+        "task/create_abc_directory.py",
         "-n=${input:name}"
       ],
       "problemMatcher": [],
